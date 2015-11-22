@@ -8,20 +8,14 @@ public class Main {
 
         System.out.println(read.getKey());
         System.out.println(read.getText());
-
+        AesCrypto crypto;
         try {
             MD5 m = new MD5(read.getKey());
-            AesCrypto crypto =new AesCrypto(m.getResult(),read.getText());
+            crypto =new AesCrypto(m.getResult(),read.getText());
+            AesDecrypto decrypto = new AesDecrypto(m.getResult(),crypto.getOut());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        try {
-            MD5 m = new MD5(read.getKey());
-            AesDecrypto crypto =new AesDecrypto(m.getResult(),read.ReadDec());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-
 
     }
 }

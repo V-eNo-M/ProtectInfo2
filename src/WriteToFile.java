@@ -17,11 +17,11 @@ public class WriteToFile {
             }
 
             //PrintWriter обеспечит возможности записи в файл
-            PrintWriter out = new PrintWriter(file.getAbsoluteFile());
+            PrintWriter out = new PrintWriter(file.getAbsoluteFile(),"utf-8");
 
             try {
                 //Записываем текст у файл
-                out.print(text);
+                out.write(text);
             } finally {
                 //После чего мы должны закрыть файл
                 //Иначе файл не запишется

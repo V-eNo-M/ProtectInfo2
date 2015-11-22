@@ -453,7 +453,11 @@ public class AesCrypto {
     private void WriteToFile() {
 
         WriteToFile m = new WriteToFile();
-        m.write("crypto",out);
+        m.write("crypto", out);
+    }
+
+    public String getOut() {
+        return out;
     }
 
 
