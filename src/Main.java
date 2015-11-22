@@ -15,6 +15,12 @@ public class Main {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+        try {
+            MD5 m = new MD5(read.getKey());
+            AesDecrypto crypto =new AesDecrypto(m.getResult(),read.ReadDec());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
 
     }
